@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+plotly = "==5.3.1"
+dash = "*"
+jupyterlab = "*"
+xlrd = "*"
+openpyxl = "*"
+jupyterthemes = "*"
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
