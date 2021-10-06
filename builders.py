@@ -1,6 +1,13 @@
 from dash import html
 
 
+def generater_comma(value):
+    if type(value) is str:
+        return value
+    else:
+        return format(round(value), ",")
+
+
 def make_table(df):
     return html.Table(
         children=[
@@ -33,10 +40,16 @@ def make_table(df):
                             "display": "grid",
                             "gridTemplateColumns": "repeat(4, 1fr)",
                             "border-top": "1px solid white",
-                            "padding": "30px 0px",
+                            "padding": "30px 0",
                         },
                         children=[
-                            html.Td(value_column, style={"textAlign": "center"})
+                            html.Td(
+                                generater_comma(value_column),
+                                style={
+                                    "textAlign": "center",
+                                    "width": "auto",
+                                },
+                            )
                             for value_column in value
                         ],
                     )
